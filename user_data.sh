@@ -1,7 +1,5 @@
-#!/usr/bin/env bash
-
 ##
-## Github Authorized Keys Setup
+# Github Authorized Keys Setup
 ##
 
 # Do not require password for users in sudo group 
