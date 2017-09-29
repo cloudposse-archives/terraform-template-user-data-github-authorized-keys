@@ -19,9 +19,9 @@ else
 fi
 
 if command -v systemctl >/dev/null; then
-  export SSH_RESTART_TPL="/bin/systemctl restart sshd.service"
+  SSH_RESTART_TPL="/bin/systemctl restart sshd.service"
 else
-  export SSH_RESTART_TPL="/etc/init.d/sshd restart"
+  SSH_RESTART_TPL="/etc/init.d/sshd restart"
 fi
 
 # Create secret file
@@ -31,8 +31,8 @@ cat << EOF > /etc/secrets/github-authorized-keys
 GITHUB_API_TOKEN=${github_api_token}
 GITHUB_ORGANIZATION=${github_organization}
 GITHUB_TEAM=${github_team}
-SYNC_USERS_GID=${SYNC_USERS_GROUPS}
-SYNC_USERS_GROUPS=${SYNC_USERS_GROUPS}
+SYNC_USERS_GID=$SYNC_USERS_GID
+SYNC_USERS_GROUPS=$SYNC_USERS_GROUPS
 SYNC_USERS_SHELL=/bin/bash
 SYNC_USERS_ROOT=/
 SYNC_USERS_INTERVAL=300
@@ -42,7 +42,7 @@ LINUX_USER_ADD_TPL=/usr/sbin/useradd --create-home --password '*' --shell {shell
 LINUX_USER_ADD_WITH_GID_TPL=/usr/sbin/useradd --create-home --password '*' --shell {shell} --group {group} {username}
 LINUX_USER_ADD_TO_GROUP_TPL=/usr/sbin/usermod --append --groups {group} {username}
 LINUX_USER_DEL_TPL=/usr/sbin/userdel {username}
-SSH_RESTART_TPL=${SSH_RESTART_TPL}
+SSH_RESTART_TPL=$SSH_RESTART_TPL
 AUTHORIZED_KEYS_COMMAND_TPL=/usr/bin/authorized-keys
 EOF
 
