@@ -47,4 +47,5 @@ Restart=always
 RestartSec=10s
 __EOF__
 systemctl daemon-reload
+systemctl enable github-authorized-keys.service
 systemctl start github-authorized-keys.service
