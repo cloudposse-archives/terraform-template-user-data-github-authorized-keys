@@ -25,9 +25,7 @@ else
 fi
 
 # Create secret file
-/bin/mkdir /etc/secrets
-/bin/chmod 700 /etc/secrets
-cat << EOF > /etc/secrets/github-authorized-keys
+cat << EOF > /etc/defaults/github-authorized-keys
 GITHUB_API_TOKEN=${github_api_token}
 GITHUB_ORGANIZATION=${github_organization}
 GITHUB_TEAM=${github_team}
