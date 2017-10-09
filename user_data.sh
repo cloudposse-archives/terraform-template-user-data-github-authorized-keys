@@ -7,14 +7,14 @@
 if  [ -f "/etc/redhat-release" ]; then
 
   echo '%wheel	ALL=(ALL)	NOPASSWD: ALL' >> /etc/sudoers
-  export SYNC_USERS_GROUPS="wheel"
-  export SYNC_USERS_GID ="500"
+  SYNC_USERS_GROUPS=wheel
+  SYNC_USERS_GID=500
 
 else
 
   echo '%sudo  ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers.d/group
-  export SYNC_USERS_GROUPS="sudo"
-  export SYNC_USERS_GID="1000"
+  SYNC_USERS_GROUPS=sudo
+  SYNC_USERS_GID=1000
 
 fi
 
@@ -25,7 +25,7 @@ else
 fi
 
 # Create secret file
-cat << EOF > /etc/defaults/github-authorized-keys
+cat << EOF > /etc/default/github-authorized-keys
 GITHUB_API_TOKEN=${github_api_token}
 GITHUB_ORGANIZATION=${github_organization}
 GITHUB_TEAM=${github_team}
@@ -36,21 +36,21 @@ SYNC_USERS_ROOT=/
 SYNC_USERS_INTERVAL=300
 LISTEN=:301
 INTEGRATE_SSH=true
-LINUX_USER_ADD_TPL=/usr/sbin/useradd --create-home --password '*' --shell {shell} {username}
-LINUX_USER_ADD_WITH_GID_TPL=/usr/sbin/useradd --create-home --password '*' --shell {shell} --group {group} {username}
-LINUX_USER_ADD_TO_GROUP_TPL=/usr/sbin/usermod --append --groups {group} {username}
-LINUX_USER_DEL_TPL=/usr/sbin/userdel {username}
-SSH_RESTART_TPL=$SSH_RESTART_TPL
+LINUX_USER_ADD_TPL="/usr/sbin/useradd --create-home --password '*' --shell {shell} {username}"
+LINUX_USER_ADD_WITH_GID_TPL="/usr/sbin/useradd --create-home --password '*' --shell {shell} --group {group} {username}"
+LINUX_USER_ADD_TO_GROUP_TPL="/usr/sbin/usermod --append --groups {group} {username}"
+LINUX_USER_DEL_TPL="/usr/sbin/userdel {username}"
+SSH_RESTART_TPL="$SSH_RESTART_TPL"
 AUTHORIZED_KEYS_COMMAND_TPL=/usr/bin/authorized-keys
 EOF
 
 if command -v systemctl >/dev/null; then
-  /usr/bin/curl -Lso /etc/systemd/system/github-authorized-keys.service https://raw.githubusercontent.com/cloudposse/github-authorized-keys/master/contrib/github-authorized-keys-non-docker.service
+  /usr/bin/curl -Lso /etc/systemd/system/github-authorized-keys.service https://raw.githubusercontent.com/cloudposse/github-authorized-keys/systemd_init/contrib/github-authorized-keys-non-docker.service
   /usr/bin/systemctl daemon-reload
   /usr/bin/systemctl enable github-authorized-keys.service
   /usr/bin/systemctl start github-authorized-keys.service
 else
-  /usr/bin/curl -Lso /etc/init.d/github-authorized-keys https://raw.githubusercontent.com/cloudposse/github-authorized-keys/master/contrib/github-authorized-keys-rhel.initd
+  /usr/bin/curl -Lso /etc/init.d/github-authorized-keys https://raw.githubusercontent.com/cloudposse/github-authorized-keys/systemd_init/contrib/github-authorized-keys-rhel.initd
   /bin/chmod +x /etc/init.d/github-authorized-keys
   /etc/init.d/github-authorized-keys start
   /sbin/chkconfig github-authorized-keys on
