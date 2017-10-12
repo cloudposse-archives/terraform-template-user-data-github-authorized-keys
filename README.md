@@ -1,1 +1,1 @@
-# terraform-template-ubuntu-github-authorized-keys-user-data
+# terraform-template-user-data-github-authorized-keys
