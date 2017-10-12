@@ -1,5 +1,9 @@
+locals {
+  template_path = "${path.module}/templates/${var.os}.sh"
+}
+
 data "template_file" "default" {
-  template = "${file("${path.module}/user_data.sh")}"
+  template = "${file(local.template_path)}"
 
   vars {
     github_api_token    = "${var.github_api_token}"
