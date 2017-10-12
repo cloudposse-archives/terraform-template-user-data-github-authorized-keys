@@ -11,6 +11,6 @@ variable "github_team" {
 }
 
 variable "os" {
-  default = "ubuntu"
+  default     = "ubuntu"
   description = "Server OS that will execute user data script"
 }
