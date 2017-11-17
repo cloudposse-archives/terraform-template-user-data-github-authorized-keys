@@ -10,7 +10,7 @@ variable "github_team" {
   description = "GitHub Team for Membership to Grant SSH Access"
 }
 
-variable "os" {
-  default     = "ubuntu"
-  description = "Server OS that will execute user data script"
+variable "flavor" {
+  default     = "debian-systemd"
+  description = "Flavor denpends of OS and init system"
 }

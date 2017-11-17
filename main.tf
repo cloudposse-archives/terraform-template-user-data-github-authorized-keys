@@ -1,5 +1,5 @@
 locals {
-  template_path = "${path.module}/templates/${var.os}.sh"
+  template_path = "${path.module}/templates/${var.flavor}.sh"
 }
 
 data "template_file" "default" {
