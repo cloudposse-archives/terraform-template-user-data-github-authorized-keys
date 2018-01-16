@@ -21,7 +21,7 @@ Terraform module designed to use template file to generate the bootstrap shell s
 <!--------------------------------REQUIRE POSTPROCESSING-------------------------------->
 |  Name | Description  |
 |:------|:------------:|
-| user_data | User data script  |
+| user_data | A rendered content of the shell script  |
 
 ## Help
 
