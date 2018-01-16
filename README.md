@@ -4,7 +4,7 @@
   --- Make changes instead to `.README.md` and rebuild.
   --->
 
-Terraform module to install [github authorized keys](https://github.com/cloudposse/github-authorized-keys) on ec2 instance with user data script
+Terraform module designed to use template file to generate the bootstrap shell script to install [github authorized keys](https://github.com/cloudposse/github-authorized-keys)
 
 ## Input
 
