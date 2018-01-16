@@ -1,4 +1,4 @@
 output "user_data" {
   value = "${data.template_file.default.rendered}"
-  description = "Script content"
+  description = "A rendered content of the shell script"
 }
