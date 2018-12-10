@@ -3,10 +3,12 @@
 
 [![Cloud Posse][logo]](https://cpco.io/homepage)
 
-# terraform-aws-user-data-s3-backend [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-user-data-s3-backend.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-aws-user-data-s3-backend) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-aws-user-data-s3-backend.svg)](https://github.com/cloudposse/terraform-aws-user-data-s3-backend/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+# terraform-template-user-data-github-authorized-keys
+
+ [![Build Status](https://travis-ci.org/cloudposse/terraform-template-user-data-github-authorized-keys.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-template-user-data-github-authorized-keys) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-template-user-data-github-authorized-keys.svg)](https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 
-terraform-aws-user-data-s3-backend
+terraform-template-user-data-github-authorized-keys
 
 
 ---
@@ -65,19 +67,22 @@ Available targets:
 | github_api_token | GitHub API Token | string | - | yes |
 | github_organization | GitHub Organization Containing Team | string | - | yes |
 | github_team | GitHub Team for Membership to Grant SSH Access | string | - | yes |
+| name | Name  (e.g. `app` or `cluster`) | string | - | yes |
+| namespace | Namespace (e.g. `cp` or `cloudposse`) | string | - | yes |
+| stage | Stage (e.g. `prod`, `dev`, `staging`) | string | - | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| user_data |  |
+| user_data | User data script that should be executed on startup |
 
 
 
 
 ## Share the Love 
 
-Like this project? Please give it a ★ on [our GitHub](https://github.com/cloudposse/terraform-aws-user-data-s3-backend)! (it helps us **a lot**) 
+Like this project? Please give it a ★ on [our GitHub](https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys)! (it helps us **a lot**) 
 
 Are you using this project or any of our other projects? Consider [leaving a testimonial][testimonial]. =)
 
@@ -86,14 +91,14 @@ Are you using this project or any of our other projects? Consider [leaving a tes
 
 Check out these related projects.
 
-- [terraform-template-user-data-assests](https://travis-ci.org/cloudposse/terraform-template-user-data-assests) - terraform-template-user-data-assests
-- [terraform-template-user-data-cloud](https://travis-ci.org/cloudposse/terraform-template-user-data-cloud) - terraform-template-user-data-cloud
-- [terraform-aws-user-data-dns-proxy](https://travis-ci.org/cloudposse/terraform-aws-user-data-dns-proxy) - terraform-aws-user-data-dns-proxy
-- [terraform-aws-user-data-resolv-conf](https://travis-ci.org/cloudposse/terraform-aws-user-data-resolv-conf) - terraform-aws-user-data-resolv-conf
-- [terraform-template-user-data-dba](https://travis-ci.org/cloudposse/terraform-template-user-data-dba) - terraform-template-user-data-dba
-- [terraform-template-user-data-dba](https://travis-ci.org/cloudposse/terraform-template-user-data-dba) - terraform-template-user-data-dba
-- [terraform-template-user-data-github-authorized-keys](https://travis-ci.org/cloudposse/terraform-template-user-data-github-authorized-keys) - terraform-template-user-data-github-authorized-keys
-- [terraform-template-user-data-nfs](https://travis-ci.org/cloudposse/terraform-template-user-data-nfs) - terraform-template-user-data-nfs
+- [terraform-template-user-data-assests](https://github.com/cloudposse/terraform-template-user-data-assests) - terraform-template-user-data-assests
+- [terraform-template-user-data-cloud](https://github.com/cloudposse/terraform-template-user-data-cloud) - terraform-template-user-data-cloud
+- [terraform-aws-user-data-dns-proxy](https://github.com/cloudposse/terraform-aws-user-data-dns-proxy) - terraform-aws-user-data-dns-proxy
+- [terraform-aws-user-data-resolv-conf](https://github.com/cloudposse/terraform-aws-user-data-resolv-conf) - terraform-aws-user-data-resolv-conf
+- [terraform-template-user-data-dba](https://github.com/cloudposse/terraform-template-user-data-dba) - terraform-template-user-data-dba
+- [terraform-template-user-data-dba](https://github.com/cloudposse/terraform-template-user-data-dba) - terraform-template-user-data-dba
+- [terraform-aws-user-data-s3-backend](https://github.com/cloudposse/terraform-aws-user-data-s3-backend) - terraform-aws-user-data-s3-backend
+- [terraform-template-user-data-nfs](https://github.com/cloudposse/terraform-template-user-data-nfs) - terraform-template-user-data-nfs
 
 
 
@@ -101,7 +106,7 @@ Check out these related projects.
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/cloudposse/terraform-aws-user-data-s3-backend/issues), send us an [email][email] or join our [Slack Community][slack].
+File a GitHub [issue](https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys/issues), send us an [email][email] or join our [Slack Community][slack].
 
 [![README Commercial Support][readme_commercial_support_img]][readme_commercial_support_link]
 
@@ -140,7 +145,7 @@ Signup for [our newsletter][newsletter] that covers everything on our technology
 
 ### Bug Reports & Feature Requests
 
-Please use the [issue tracker](https://github.com/cloudposse/terraform-aws-user-data-s3-backend/issues) to report any bugs or file feature requests.
+Please use the [issue tracker](https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys/issues) to report any bugs or file feature requests.
 
 ### Developing
 
@@ -241,16 +246,16 @@ Check out [our other projects][github], [follow us on twitter][twitter], [apply 
   [we_love_open_source]: https://cpco.io/we-love-open-source
   [module_development]: https://cpco.io/module-development
   [terraform_modules]: https://cpco.io/terraform-modules
-  [readme_header_img]: https://cloudposse.com/readme/header/img?repo=cloudposse/terraform-aws-user-data-s3-backend
-  [readme_header_link]: https://cloudposse.com/readme/header/link?repo=cloudposse/terraform-aws-user-data-s3-backend
-  [readme_footer_img]: https://cloudposse.com/readme/footer/img?repo=cloudposse/terraform-aws-user-data-s3-backend
-  [readme_footer_link]: https://cloudposse.com/readme/footer/link?repo=cloudposse/terraform-aws-user-data-s3-backend
-  [readme_commercial_support_img]: https://cloudposse.com/readme/commercial-support/img?repo=cloudposse/terraform-aws-user-data-s3-backend
-  [readme_commercial_support_link]: https://cloudposse.com/readme/commercial-support/link?repo=cloudposse/terraform-aws-user-data-s3-backend
-  [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-user-data-s3-backend&url=https://github.com/cloudposse/terraform-aws-user-data-s3-backend
-  [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-user-data-s3-backend&url=https://github.com/cloudposse/terraform-aws-user-data-s3-backend
-  [share_reddit]: https://reddit.com/submit/?url=https://github.com/cloudposse/terraform-aws-user-data-s3-backend
-  [share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/cloudposse/terraform-aws-user-data-s3-backend
-  [share_googleplus]: https://plus.google.com/share?url=https://github.com/cloudposse/terraform-aws-user-data-s3-backend
-  [share_email]: mailto:?subject=terraform-aws-user-data-s3-backend&body=https://github.com/cloudposse/terraform-aws-user-data-s3-backend
-  [beacon]: https://ga-beacon.cloudposse.com/UA-76589703-4/cloudposse/terraform-aws-user-data-s3-backend?pixel&cs=github&cm=readme&an=terraform-aws-user-data-s3-backend
+  [readme_header_img]: https://cloudposse.com/readme/header/img?repo=cloudposse/terraform-template-user-data-github-authorized-keys
+  [readme_header_link]: https://cloudposse.com/readme/header/link?repo=cloudposse/terraform-template-user-data-github-authorized-keys
+  [readme_footer_img]: https://cloudposse.com/readme/footer/img?repo=cloudposse/terraform-template-user-data-github-authorized-keys
+  [readme_footer_link]: https://cloudposse.com/readme/footer/link?repo=cloudposse/terraform-template-user-data-github-authorized-keys
+  [readme_commercial_support_img]: https://cloudposse.com/readme/commercial-support/img?repo=cloudposse/terraform-template-user-data-github-authorized-keys
+  [readme_commercial_support_link]: https://cloudposse.com/readme/commercial-support/link?repo=cloudposse/terraform-template-user-data-github-authorized-keys
+  [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-template-user-data-github-authorized-keys&url=https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys
+  [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-template-user-data-github-authorized-keys&url=https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys
+  [share_reddit]: https://reddit.com/submit/?url=https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys
+  [share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys
+  [share_googleplus]: https://plus.google.com/share?url=https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys
+  [share_email]: mailto:?subject=terraform-template-user-data-github-authorized-keys&body=https://github.com/cloudposse/terraform-template-user-data-github-authorized-keys
+  [beacon]: https://ga-beacon.cloudposse.com/UA-76589703-4/cloudposse/terraform-template-user-data-github-authorized-keys?pixel&cs=github&cm=readme&an=terraform-template-user-data-github-authorized-keys

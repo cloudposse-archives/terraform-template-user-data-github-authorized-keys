@@ -1,3 +1,18 @@
+variable "namespace" {
+  description = "Namespace (e.g. `cp` or `cloudposse`)"
+  type        = "string"
+}
+
+variable "stage" {
+  description = "Stage (e.g. `prod`, `dev`, `staging`)"
+  type        = "string"
+}
+
+variable "name" {
+  description = "Name  (e.g. `app` or `cluster`)"
+  type        = "string"
+}
+
 variable "github_api_token" {
   description = "GitHub API Token"
 }
